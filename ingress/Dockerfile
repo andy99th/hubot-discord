@@ -24,7 +24,7 @@ RUN npm install --unsafe-perm --save git+https://github.com/thetimpanist/hubot-d
 # Install hubot tools
 RUN npm install --save hubot-ingress \
  && npm install --save hubot-misawa \
- && sed -i 's/\[/\[\n  "hubot-ingress",\n  "hubot-misawa",/' external-scripts.json
+ && sed -i 's/\[/\[\n  "hubot-ingress",\n  "hubot-misawa",/' external-scripts.json \
  && sed -i '/hubot-heroku-keepalive/d' external-scripts.json
 
 # Set script directory
