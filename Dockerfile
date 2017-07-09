@@ -3,9 +3,9 @@ FROM node:latest
 MAINTAINER andy99th <andy@99th.jp>
 
 # Install hubot
-RUN ln -s /usr/bin/nodejs /usr/bin/node && \
-    npm install -g coffee-script && \
-    npm install -g yo generator-hubot time cron
+RUN ln -s /usr/bin/nodejs /usr/bin/node \
+ && npm install -g coffee-script \
+ && npm install -g yo generator-hubot time cron
 
 # Create user
 RUN useradd -d /hubot -m -s /bin/bash -U hubot
