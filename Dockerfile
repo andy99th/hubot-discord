@@ -5,7 +5,7 @@ MAINTAINER andy99th <andy@99th.jp>
 # Install hubot
 RUN ln -s /usr/bin/nodejs /usr/bin/node \
  && npm install -g coffee-script \
- && npm install -g yo generator-hubot time cron
+ && npm install -g yo generator-hubot cron
 
 # Create user
 RUN useradd -d /hubot -m -s /bin/bash -U hubot
@@ -19,7 +19,7 @@ RUN yo hubot --owner="andy99th" --name="HuBot" --description="HuBot on Docker" -
 
 # Install adapter and modules
 RUN npm install --unsafe-perm --save git+https://github.com/thetimpanist/hubot-discord \
- && npm install --save lodash
+ && npm install --save lodash time
 
 # Install hubot tools
 RUN sed -i '/hubot-heroku-keepalive/d' external-scripts.json
